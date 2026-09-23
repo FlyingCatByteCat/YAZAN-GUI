@@ -3,6 +3,11 @@
 const FILES = {
   "packed-loader": "scripts/packed-loader.js",
   "main-loader": "scripts/main-loader.js",
+  "loader-raw": "scripts/loader_raw.js",
+  "deobf-anti": "scripts/deobfuscated_anti_debug.js",
+  "anti-raw": "scripts/anti_debug_raw.js",
+  "main-analysis": "scripts/MAIN_ANALYSIS.md",
+  "main-raw": "scripts/main_raw.js",
 };
 
 function sitemap(html) {

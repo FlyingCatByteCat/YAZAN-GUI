@@ -3,18 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YAZAN GUI — Loader Analysis</title>
+  <title>YAZAN GUI — Solvr Analysis</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>YAZAN <span>GUI</span></h1>
-    <p class="sub">Deobfuscated solvr-family loaders &middot; analysis only &middot; network and eval are disabled</p>
+    <p class="sub">Deobfuscated solvr-family scripts &middot; analysis only &middot; network and eval are disabled</p>
   </header>
 
   <nav id="tabs" role="tablist">
-    <button class="tab active" data-target="packed-loader" role="tab">Packed loader (main.js + anti-debug.js)</button>
-    <button class="tab" data-target="main-loader" role="tab">Main loader (loader.js)</button>
+    <button class="tab active" data-target="packed-loader" role="tab">Packed loader</button>
+    <button class="tab" data-target="main-loader" role="tab">Deobfuscated loader</button>
+    <button class="tab" data-target="loader-raw" role="tab">Raw loader.js</button>
+    <button class="tab" data-target="deobf-anti" role="tab">Deobfuscated anti-debug.js</button>
+    <button class="tab" data-target="anti-raw" role="tab">Raw anti-debug.js</button>
+    <button class="tab" data-target="main-analysis" role="tab">main.js analysis</button>
+    <button class="tab" data-target="main-raw" role="tab">Raw main.js</button>
   </nav>
 
   <main>
@@ -26,12 +31,53 @@
         </div>
         <pre id="packed-loader" class="code"></pre>
       </article>
+
       <article class="panel" id="main-loader-panel" data-panel="main-loader">
         <div class="meta">
-          <span class="badge">source</span><code>https://solvr.top loader.js</code>
+          <span class="badge">source</span><code>https://solvr.top loader.js (decoded)</code>
           <span class="badge">status</span><code class="ok">disarmed</code>
         </div>
         <pre id="main-loader" class="code"></pre>
+      </article>
+
+      <article class="panel" id="loader-raw-panel" data-panel="loader-raw">
+        <div class="meta">
+          <span class="badge">source</span><code>https://solvr.top/loader.js (served copy)</code>
+          <span class="badge">status</span><code class="warn">obfuscated, not executed</code>
+        </div>
+        <pre id="loader-raw" class="code"></pre>
+      </article>
+
+      <article class="panel" id="deobf-anti-panel" data-panel="deobf-anti">
+        <div class="meta">
+          <span class="badge">source</span><code>https://solvr.top/anti-debug.js (decoded)</code>
+          <span class="badge">status</span><code class="ok">disarmed</code>
+        </div>
+        <pre id="deobf-anti" class="code"></pre>
+      </article>
+
+      <article class="panel" id="anti-raw-panel" data-panel="anti-raw">
+        <div class="meta">
+          <span class="badge">source</span><code>https://solvr.top/anti-debug.js (served copy)</code>
+          <span class="badge">status</span><code class="warn">obfuscated, not executed</code>
+        </div>
+        <pre id="anti-raw" class="code"></pre>
+      </article>
+
+      <article class="panel" id="main-analysis-panel" data-panel="main-analysis">
+        <div class="meta">
+          <span class="badge">source</span><code>https://solvr.top/main.js (report)</code>
+          <span class="badge">status</span><code class="warn">VM packer, structural only</code>
+        </div>
+        <pre id="main-analysis" class="code"></pre>
+      </article>
+
+      <article class="panel" id="main-raw-panel" data-panel="main-raw">
+        <div class="meta">
+          <span class="badge">source</span><code>https://solvr.top/main.js (served copy, 1.6 MB)</code>
+          <span class="badge">status</span><code class="warn">obfuscated, not executed</code>
+        </div>
+        <pre id="main-raw" class="code"></pre>
       </article>
     </section>
   </main>

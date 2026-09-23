@@ -96,6 +96,8 @@ main {
 
 .meta .ok { color: var(--ok); }
 
+.meta .warn { color: #e0a726; }
+
 .code {
   background: var(--panel);
   border: 1px solid var(--border);
