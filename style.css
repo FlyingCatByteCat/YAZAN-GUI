@@ -134,8 +134,25 @@ main {
 .bm-link:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(0,0,0,0.4), 0 6px 30px rgba(255,255,255,0.5); }
 .bm-link:active { cursor: grabbing; }
 .bm-link strong { font-weight: 800; }
-.bm-hint { margin: 0; font-size: 0.82rem; }
+.bm-hint { margin: 0; font-size: 0.82rem; line-height: 1.5; }
 .bm-hint strong { color: #fff; font-weight: 600; }
+.bm-hint kbd {
+  background: #000;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.05rem 0.35rem;
+  font-size: 0.75rem;
+}
+.bmlink-btn {
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 6px;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+.bm-cols { display: flex; flex-direction: column; gap: 0.4rem; min-width: 240px; flex: 1; }
 .bm-note { margin: 0; width: 100%; font-size: 0.75rem; opacity: 0.75; }
 
 .code {

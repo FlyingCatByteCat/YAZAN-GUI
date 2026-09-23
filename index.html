@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>YAZAN GUI — Solvr Analysis</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=2" />
 </head>
 <body>
   <header>
@@ -12,11 +12,16 @@
     <p class="sub">Deobfuscated solvr-family scripts &middot; analysis only &middot; network and eval are disabled</p>
   </header>
 
-  <section class="bookmarkbar">
-    <a class="bm-link" title="Drag this onto your bookmarks bar" href='javascript:void window.open("https://flyingcatbytecat.github.io/YAZAN-GUI/","_blank")'>YAZAN <strong>GUI</strong></a>
-    <p class="bm-hint">drag me to your <strong>bookmarks bar</strong> &rarr; click it on any page to open YAZAN GUI</p>
-    <p class="bm-note">solvr.top&rsquo;s pill injects and runs the cheat loader on the page you&rsquo;re on. This one is analysis-only &mdash; clicking it opens the viewer in a new tab and never runs or injects anything.</p>
+  <section class="bookmarkbar" id="bmbar">
+    <a class="bm-link" title="Drag this onto your bookmarks bar" href='javascript:void window.open("https://flyingcatbytecat.github.io/YAZAN-GUI/","_blank")'>YAZAN <strong>GUI</strong> &nbsp;&rarr;&nbsp; drag me</a>
+    <div class="bm-cols">
+      <p class="bm-hint"><strong>Step 1:</strong> make sure your <strong>bookmarks bar</strong> is visible (Chrome/Safari/Firefox: <kbd>Cmd+Shift+B</kbd>).<br>
+      <strong>Step 2:</strong> drag the pill above onto the bar. Done.</p>
+      <p class="bm-hint">Can&rsquo;t drag (phone, Firefox, etc.)? <button class="bmlink-btn" id="copyBm">copy bookmarklet link</button>, then create a new bookmark and paste it as the URL.</p>
+      <p class="bm-note">solvr.top&rsquo;s pill injects and runs the cheat loader on the page you visit. This one is analysis-only &mdash; it opens the viewer in a new tab and never runs or injects anything.</p>
+    </div>
   </section>
+  <input id="bmHref" type="hidden" value='javascript:void window.open("https://flyingcatbytecat.github.io/YAZAN-GUI/","_blank")' />
 
   <nav id="tabs" role="tablist">
     <button class="tab active" data-target="packed-loader" role="tab">Packed loader</button>
@@ -92,6 +97,6 @@
     <p>Viewer for forensic analysis. Loaded scripts are rendered as text only and never executed.</p>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=2"></script>
 </body>
 </html>

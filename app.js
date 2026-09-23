@@ -46,3 +46,18 @@ tabs.forEach((tab) => {
 
   if (tab.classList.contains("active")) loadInto(tab.dataset.target);
 });
+
+const copyBm = document.getElementById("copyBm");
+if (copyBm) {
+  copyBm.addEventListener("click", async () => {
+    const href = document.getElementById("bmHref").value;
+    try {
+      await navigator.clipboard.writeText(href);
+      copyBm.textContent = "copied! paste into a bookmark's URL";
+    } catch (e) {
+      window.prompt("Copy the bookmarklet URL:", href);
+      copyBm.textContent = "copy bookmarklet link";
+    }
+    setTimeout(() => { copyBm.textContent = "copy bookmarklet link"; }, 3500);
+  });
+}
