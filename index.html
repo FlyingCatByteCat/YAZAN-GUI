@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YAZAN GUI — Loader Analysis</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>YAZAN <span>GUI</span></h1>
+    <p class="sub">Deobfuscated solvr-family loaders &middot; analysis only &middot; network and eval are disabled</p>
+  </header>
+
+  <nav id="tabs" role="tablist">
+    <button class="tab active" data-target="packed-loader" role="tab">Packed loader (main.js + anti-debug.js)</button>
+    <button class="tab" data-target="main-loader" role="tab">Main loader (loader.js)</button>
+  </nav>
+
+  <main>
+    <section id="panels">
+      <article class="panel active" id="packed-loader-panel" data-panel="packed-loader">
+        <div class="meta">
+          <span class="badge">source</span><code>obfuscated inline script</code>
+          <span class="badge">status</span><code class="ok">disarmed</code>
+        </div>
+        <pre id="packed-loader" class="code"></pre>
+      </article>
+      <article class="panel" id="main-loader-panel" data-panel="main-loader">
+        <div class="meta">
+          <span class="badge">source</span><code>https://solvr.top loader.js</code>
+          <span class="badge">status</span><code class="ok">disarmed</code>
+        </div>
+        <pre id="main-loader" class="code"></pre>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Viewer for forensic analysis. Loaded scripts are rendered as text only and never executed.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
